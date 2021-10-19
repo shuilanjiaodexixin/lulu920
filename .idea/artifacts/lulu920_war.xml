@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="lulu920-1.0-SNAPSHOT.war">
+    <root id="archive" name="travel-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="lulu920:war exploded" />
     </root>
   </artifact>

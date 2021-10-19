@@ -1,6 +1,6 @@
 package com.example.lulu920;
 
-import com.example.dao.UserDao;
+//import com.example.dao.UserDao;
 import com.example.domain.User;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -20,8 +20,8 @@ public class LoginServlet extends HttpServlet {
         String username =  request.getParameter("username");
         String password =  request.getParameter("password");
         User loginuser =  new User();
-        loginuser.setUSERNAME(username);
-        loginuser.setPASSWORD(password);
+//        loginuser.setUSERNAME(username);
+//        loginuser.setPASSWORD(password);
 //        Map<String, String[]> map =  request.getParameterMap();
 //        User loginuser = new User();
 //        try{
@@ -31,16 +31,16 @@ public class LoginServlet extends HttpServlet {
 //        } catch (IllegalAccessException  e) {
 //            e.printStackTrace();
 //        }
-        UserDao dao = new UserDao();
-        User user = dao.login(loginuser);
+//        UserDao dao = new UserDao();
+//        User user = dao.login(loginuser);
 
-        if (user == null) {
-            //登陆失败
-            request.getRequestDispatcher("/failServlet").forward(request, response);
-        }else{
-                request.setAttribute("user", user);
-                request.getRequestDispatcher("/successServlet").forward(request,response);
-            }
+//        if (user == null) {
+//            //登陆失败
+//            request.getRequestDispatcher("/failServlet").forward(request, response);
+//        }else{
+//                request.setAttribute("user", user);
+//                request.getRequestDispatcher("/successServlet").forward(request,response);
+//            }
 
     }
 
