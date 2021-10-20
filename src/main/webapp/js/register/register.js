@@ -86,6 +86,8 @@ $(function () {
                 }else {
                     //注册失败,给errorMsg添加提示信息
                     $("#errorMsg").html(data.errorMsg);
+                    $(".check-img").attr("src", "/checkCode?" + new Date().getTime());
+
                 }
             });
         }
