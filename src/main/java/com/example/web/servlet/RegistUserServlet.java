@@ -63,7 +63,7 @@ public class RegistUserServlet extends HttpServlet {
         }else {
             //注册失败
             info.setFlag(false);
-            info.setErrorMsg("注册失败!");
+            info.setErrorMsg("用户名已注册");
         }
         //info对象序列化json
         ObjectMapper mapper=new ObjectMapper();

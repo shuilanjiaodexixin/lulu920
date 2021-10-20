@@ -24,8 +24,7 @@ function checkUsername() {
     var flag = reg_username.test(username);
     if (flag) {
         //用户名合法
-        $("#username").css("border", " ");
-        console.log("")
+        $("#username").css("border", "");
     } else {
         //用户名非法，加一个红色边框
         $("#username").css("border", "1px solid red");
@@ -85,7 +84,9 @@ $(function () {
                     location.href="/template/register/register_ok.html";
                 }else {
                     //注册失败,给errorMsg添加提示信息
+                    $(".check-img").click();
                     $("#errorMsg").html(data.errorMsg);
+
                 }
             });
         }
