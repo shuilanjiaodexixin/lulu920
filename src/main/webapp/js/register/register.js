@@ -1,6 +1,6 @@
 //验证码
 function changeCheckCode(img) {
-    img.src = "checkCode?" + new Date().getTime();
+    img.src = "/checkCode?" + new Date().getTime();
 }
 
 /*

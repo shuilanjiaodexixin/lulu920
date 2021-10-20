@@ -1,5 +1,6 @@
 package com.example.web.servlet;
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,7 +39,21 @@ public class CheckCodeServlet extends HttpServlet {
 
         //产生4个随机验证码， 12Ey
         String checkCode = getCheckCode();
+        //将验证码放入HttpSession中
+        request.getSession().setAttribute("CHECKCODE_SERVER",checkCode);
 
+        //设置画笔颜色为黄色
+        g.setColor(Color.YELLOW);
+        //设置字体的小大
+        g.setFont(new Font("黑体",Font.BOLD,24));
+        //向图片上写入验证码
+        g.drawString(checkCode,15,25);
+
+        //将内存中的图片输出到浏览器
+        //参数一：图片对象
+        //参数二：图片的格式，如PNG,JPG,GIF
+        //参数三：图片输出到哪里去
+        ImageIO.write(image,"PNG",response.getOutputStream());
     }
     /**
      * 产生4位随机字符串
