@@ -10,5 +10,6 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <a href="/template/register/register.html">注册页</a>
+<a href="index.html"></a>
 </body>
 </html>
