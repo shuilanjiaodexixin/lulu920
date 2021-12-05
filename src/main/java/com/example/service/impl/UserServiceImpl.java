@@ -4,7 +4,9 @@ import com.example.dao.UserDao;
 import com.example.dao.impl.UserDaoImpl;
 import com.example.domain.User;
 import com.example.service.UserService;
+import com.example.util.MailUtils;
 import com.example.util.UuidUtil;
+
 
 public class UserServiceImpl implements UserService {
     private UserDao userDao = new UserDaoImpl();
@@ -26,7 +28,10 @@ public class UserServiceImpl implements UserService {
         user.setStatus("N");
         userDao.save(user);
 
-        //邮件
+        //3.激活邮件发送，邮件发送正文
+        String content="<a href='http://localhost:8080/activeUserServlet?code="+user.getCode()+"'>点击激活【飞飞旅游网】</a>";
+
+        MailUtils.sendMail(user.getEmail(),content,"激活邮件");
         return true;
     }
 
